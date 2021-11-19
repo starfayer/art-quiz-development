@@ -1,10 +1,9 @@
 // eslint-disable-next-line import/no-unresolved
 import '@/styles/style.scss';
 
-import { Module, render } from '@/app/core/index';
-import { pages } from './app/pages/index';
-import components from './app/components';
-// import { routes } from './app/pages/routes';
+import Module from './app/core/module';
+import components from './app/components/';
+import render from './app/core/render';
 
 class AppModule extends Module {
   constructor(config) {
@@ -14,8 +13,7 @@ class AppModule extends Module {
 
 const appModule = new AppModule({
   components: components,
-  pages: pages,
-  // routes
+  // pages: pages,
 })
 
 render(appModule);
