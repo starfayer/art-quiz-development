@@ -12,6 +12,8 @@ body {
 }
 
 .settings-wrapper {
+  transform: translateX(100%);
+  transition: $transition-default;
   height: 95%;
 }
 
