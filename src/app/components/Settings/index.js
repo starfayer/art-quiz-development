@@ -22,7 +22,7 @@ class Settings extends Component {
       '.settings__open-close-btn click': this.openSettings,
       '.settings__header-btn click': this.openSettings,
       '.settings__header-text click': this.openSettings,
-      '.settings__slider change': this.changeVolume,
+      '.settings__slider change': this.changeVolume
     }
   }
 
@@ -33,9 +33,10 @@ class Settings extends Component {
   openSettings(event) {
     if (!(event.target.classList.contains('settings__header-text'))) {
       event.target.classList.add('animated');
-      setTimeout(() => event.target.classList.remove('animated'), 2000);  
+      setTimeout(() => event.target.classList.remove('animated'), 2000);
     }
     // Have access to this.el because of inheritance
+    // document.querySelector('.settings-wrapper').style.transition = 'all 1s ease-in-out';
     document.querySelector('.settings-wrapper').classList.toggle('hidden');
   }
 
