@@ -37,7 +37,6 @@ class Settings extends Component {
     }
     // Have access to this.el because of inheritance
     document.querySelector('.settings-wrapper').classList.toggle('hidden');
-    // this.el.querySelector('.settings').classList.toggle('hidden');
   }
 
   changeVolume(event) { 

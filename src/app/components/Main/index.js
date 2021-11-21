@@ -1,4 +1,4 @@
-import MainElement from './index.html';
+import MainElement from './main.html';
 import Component from '@/app/core/component';
 
 class Main extends Component {

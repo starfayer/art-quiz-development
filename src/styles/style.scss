@@ -12,8 +12,10 @@ body {
 }
 
 .settings-wrapper {
+  position: absolute;
+  width: 100%;
   transform: translateX(100%);
-  transition: $transition-default;
+  // transition: $transition-default;
   height: 95%;
 }
 
