@@ -2,7 +2,7 @@
 import '@/styles/style.scss';
 
 import Module from './app/core/module';
-import components from './app/components/';
+import { components, routes } from './app/components/';
 import render from './app/core/render';
 
 class AppModule extends Module {
@@ -13,6 +13,7 @@ class AppModule extends Module {
 
 const appModule = new AppModule({
   components: components,
+  routes: routes
   // pages: pages,
 })
 

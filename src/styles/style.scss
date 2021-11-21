@@ -1,0 +1,20 @@
+@import "../fonts/gilroy/gilroy.css";
+@import "normalize.css";
+@import "vars.scss";
+
+body {
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  font-family: 'Gilroy';
+  font-weight: $medium-font-weight;
+  color: #fff;
+}
+
+.settings-wrapper {
+  height: 95%;
+}
+
+.footer-wrapper {
+  height: 80px;
+}

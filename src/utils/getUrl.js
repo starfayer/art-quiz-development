@@ -1,3 +1,3 @@
 export default function getCurrentUrl() {
-  return window.location.hash.slice(1);
+  return location.hash.slice(1);
 }

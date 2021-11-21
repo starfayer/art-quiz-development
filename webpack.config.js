@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+const { url } = require('inspector');
 
 const nothing = () => {};
 
@@ -44,12 +45,21 @@ module.exports = (env, options) => {
             'style-loader',
             'css-loader',
             'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  "src/styles/vars.scss",
+                ]
+              }
+            }
           ],
         }, {
-          test: /\.(png|svg|jpe?g|gif|ttf)$/,
-          use: {
-            loader: 'file-loader',
-          },
+          test: /\.svg$/,
+          type: 'asset/inline'
+        },{
+          test: /\.(png|jpe?g|gif|ttf)$/,
+          type: 'asset/resource'
         }, {
           test: /\.html$/,
           use: {
@@ -74,3 +84,4 @@ module.exports = (env, options) => {
     ],
   };
 };
+

@@ -1,0 +1,22 @@
+@mixin button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-size: 100% 100%;
+}
+
+@mixin flex-column($height) {
+  @if $height {
+    height: $height;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+$categories-font-size: 20px;
+$navigation-font-size: 22px;
+$medium-font-weight: 500;
+
+$orange-color: #FFBCA2;

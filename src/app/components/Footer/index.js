@@ -1,4 +1,5 @@
-import FooterElement from './index.html';
+import './style.scss'
+import FooterElement from './footer.html';
 import Component from '@/app/core/component';
 
 class Footer extends Component {
@@ -7,8 +8,8 @@ class Footer extends Component {
   }
 }
 
-let footer = new Footer({
-  classSelector: 'footer',
+const footer = new Footer({
+  classSelector: 'footer-wrapper',
   template: FooterElement
 })
 

@@ -1,5 +1,8 @@
-import header from "./Header";
-import main from "./Main";
+import settings from "./Settings";
+import menu from "./Menu";
 import footer from "./Footer";
 
-export default [header, main, footer]
+import routes from "./routes";
+
+let components = [settings, footer];
+export { routes, components };;

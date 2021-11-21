@@ -8,7 +8,7 @@ class Main extends Component {
 }
 
 let main = new Main({
-  classSelector: 'main',
+  classSelector: 'main-wrapper',
   template: MainElement
 })
 
