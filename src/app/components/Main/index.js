@@ -1,3 +1,4 @@
+import './style.scss';
 import MainElement from './main.html';
 import Component from '@/app/core/component';
 

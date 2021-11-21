@@ -11,14 +11,27 @@ body {
   color: #fff;
 }
 
+.background {
+  height: inherit;
+  background-image: url(/src/app/components/assets/artMain-logo.jpg);
+  background-size: cover;
+}
 .settings-wrapper {
   position: absolute;
   width: 100%;
   transform: translateX(100%);
-  // transition: $transition-default;
   height: 95%;
 }
 
+.main-wrapper {
+  height: 100%;
+}
 .footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   height: 80px;
 }
