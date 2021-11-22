@@ -21,6 +21,7 @@ module.exports = (env, options) => {
     output: {
       filename: 'bundle.js',
       path: path.join(__dirname, '/build'),
+      publicPath: "/webpack-demo/"
     },
     resolve: {
       extensions: ['.js', '.json', '.mjs'],
