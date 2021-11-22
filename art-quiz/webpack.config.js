@@ -21,7 +21,7 @@ module.exports = (env, options) => {
     output: {
       filename: 'bundle.js',
       path: path.join(__dirname, '/build'),
-      publicPath: path.join(__dirname, '/build'),
+      // publicPath: path.join(__dirname, 'build'),
     },
     resolve: {
       extensions: ['.js', '.json', '.mjs'],
@@ -79,9 +79,6 @@ module.exports = (env, options) => {
         template: './src/index.html',
       }),
       isAnalyze ? new BundleAnalyzerPlugin() : nothing,
-      isProduction
-        ? new CopyWebpackPlugin({ patterns: [{ from: './src/static', to: '.' }] })
-        : nothing,
     ],
   };
 };
