@@ -1,0 +1,197 @@
+.settings {
+  height: 100%;
+  // transition: all 1s ease-in-out;
+  &__container {
+    height: inherit;
+    @include center-position(92%);
+  }
+  &__open-close-btn{
+    position: absolute;
+    top: 4%;
+    left: -5%;
+    width: 36px;
+    height: 36px;
+    @include button-layout;
+    background-image: url(../assets/settings-btn.svg);
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    align-items: center;
+    height: 10%;
+    background-size: 100% 100%;
+  }
+  &__header-text {
+    position: relative;
+    cursor: pointer;
+    font-size: $navigation-font-size;
+  }
+  &__header-text::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: -45%;
+    background-image: url(../assets/back-arrow.svg);
+    background-size: cover;
+    width: 34px;
+    height: 34px;
+  }
+
+  &__header-btn {
+    width: 36px;
+    height: 36px;
+    @include button-layout;
+    background-image: url(../assets/close-btn.svg);
+  }
+
+  &__inner {
+    height: 55%;
+    font-size: 34px;
+    font-weight: 700;;
+  }
+  &__volume {
+    margin-top: 5%;
+    margin-bottom: 80px;
+    width: 23%;
+    @include flex-column(23%);
+  }
+  &__slider {
+    background: linear-gradient(to right, $orange-color 0%, $orange-color 50%, #A4A4A4 50%, #A4A4A4 100%);
+    border-radius: 8px;
+    height: 3px;
+    width: 356px;
+    outline: none;
+    cursor: ew-resize;
+    -webkit-appearance: none;
+  }
+  &__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px; 
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__slider-icons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__check {
+    @include flex-column(16%);
+    width: 23%;
+    margin-bottom: 80px;
+  }
+  &__text {
+    font-size: $navigation-font-size;
+    font-weight: $medium-font-weight;
+  }
+  &__checkbox input {
+    display: none;
+  }
+  &__checkbox label {
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    padding: 15px 0;
+  }
+  &__checkbox input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden !important;
+  }
+  &__checkbox input[type="checkbox"]+label:before,
+  &__checkbox input[type="checkbox"]+label:after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  box-sizing: border-box;
+  }
+  &__checkbox input[type="checkbox"]+label:before {
+    width: 48px;
+    height: 24px;
+    margin-left: 40px;
+    background: #FFBCA2;
+    border-radius: 15px;
+  }
+  &__checkbox input[type="checkbox"]+label:after {
+    width: 16px;
+    height: 16px;
+    top: -20px;
+    right: -83px;
+    background: #fff;
+    border-radius: 50%;
+    transition: all 200ms ease-out;
+  }
+  &__checkbox input[type="checkbox"]:checked+label:after {
+    top: -20px;
+    right: -60px;
+    background: #fff;
+  }
+
+  &__time {
+    @include flex-column(18%);
+    width: 16%;
+  }
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+  }
+  &__number {
+    margin-top: 4%;
+    font-size: 24px;
+    font-weight: $medium-font-weight;
+  }
+  &__button {
+    @include button-layout;
+    width: 60%;
+    max-width: 36px;
+    height: 36px;
+  }
+  &__button--minus {
+    background-image: url(../assets/minus-btn.svg);
+  }
+  &__button--plus {
+    background-image: url(../assets/plus-btn.svg);
+  }
+
+  &__config {
+    margin-top: 5%;
+    display: flex;
+    justify-content: flex-end;
+    height: 6%;
+  }
+  &__config-wrapper {
+    align-items: right;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+  &__config-button {
+    width: 49%;
+  }
+}
+
+.animated {
+  animation: barrelRoll 2s infinite linear;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes barrelRoll {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+.hidden {
+  // display: none;
+  transition: $transition-default;
+  transform: none;
+}
+// div:hover > button {
+  // animation-play-state: running;
+  // animation-play-state: paused;
+// }
