@@ -14,7 +14,7 @@ module.exports = (env, options) => {
 
   return {
     // mode: isProduction ? 'production' : 'development',
-    mode: 'production',
+    mode: 'development',
     // devtool: isProduction ? 'source-map' : 'eval',
     devtool: 'inline-source-map',
     entry: ['./src/index.js'],
