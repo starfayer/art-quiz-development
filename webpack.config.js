@@ -14,14 +14,14 @@ module.exports = (env, options) => {
 
   return {
     // mode: isProduction ? 'production' : 'development',
-    mode: 'development',
+    mode: 'production',
     // devtool: isProduction ? 'source-map' : 'eval',
     devtool: 'inline-source-map',
     entry: ['./src/index.js'],
     output: {
       filename: 'bundle.js',
-      path: path.join(__dirname, '/build'),
-      publicPath: "/webpack-demo/"
+      path: path.join(__dirname, '/art-quiz/build'),
+      publicPath: path.join(__dirname, '/art-quiz/build'),
     },
     resolve: {
       extensions: ['.js', '.json', '.mjs'],
