@@ -1,6 +1,7 @@
 import './style.scss';
 import Component from '@/app/core/component';
 import SettingsElement from './settings.html';
+import button from '../Button';
 
 
 // const settingsButton = document.querySelector('.settings__link');
@@ -22,12 +23,9 @@ class Settings extends Component {
       '.settings__open-close-btn click': this.openSettings,
       '.settings__header-btn click': this.openSettings,
       '.settings__header-text click': this.openSettings,
-      '.settings__slider change': this.changeVolume
+      '.settings__slider change': this.changeVolume,
+      '.settings__config-button click': this.delayClick
     }
-  }
-
-  functions() {
-
   }
 
   openSettings(event) {
@@ -44,7 +42,24 @@ class Settings extends Component {
     let value = event.target.value;
     event.target.style.backgroundImage = `linear-gradient(to right, #FFBCA2 0%, #FFBCA2 0%, #FFBCA2 ${value}%, #A4A4A4 0%, #A4A4A4 0%,#A4A4A4 ${event.target.max - value}%)`;
   }
+
+  delayClick(event) {
+    event.target.style.background = '#fff';
+    event.target.style.color = '#000';
+    setTimeout(() => event.target.removeAttribute('style'), 1000)
+  }
+
+  external() {
+    return {
+      '.settings__config-button--default': [button, defaultBtn],
+      '.settings__config-button--save': [button, saveBtn],
+    }
+  }
 }
+
+const defaultBtn = 'Default';
+const saveBtn = 'Save';
+
 const settings = new Settings({
   classSelector: 'settings-wrapper',
   template: SettingsElement

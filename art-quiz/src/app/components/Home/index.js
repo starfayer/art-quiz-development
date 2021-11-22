@@ -1,7 +1,8 @@
 import './style.scss';
-import MainElement from './main.html';
+import HomeElement from './home.html';
 import button from '../Button';
 import Component from '@/app/core/component';
+import changeHash from '@/utils/changeHash';
 
 class Main extends Component {
   constructor(config) {
@@ -10,14 +11,15 @@ class Main extends Component {
 
   external() {
     return {
-      '.main__button--artists': [button, artistBtn],
-      '.main__button--pictures': [button, pictureBtn],
+      '.home__button--artists': [button, artistBtn],
+      '.home__button--pictures': [button, pictureBtn],
     }
   }
 
   events() {
     return {
-      '.main__button click': this.delayClick
+      '.home__button click': this.delayClick,
+      '.home__button click': this.changeHash
     }
   }
 
@@ -26,14 +28,19 @@ class Main extends Component {
     event.target.style.color = '#000';
     setTimeout(() => event.target.removeAttribute('style'), 1000)
   }
+
+  changeHash(event) {
+    let hashSelector = event.target.parentNode.classList[1].split('--').pop();
+    changeHash(hashSelector)
+  }
 }
 
 const artistBtn = 'Artist Quiz';
 const pictureBtn = 'Pictures Quiz';
 
-let main = new Main({
+let home = new Main({
   classSelector: 'main-wrapper',
-  template: MainElement,
+  template: HomeElement,
 })
 
-export default main;
+export default home;
