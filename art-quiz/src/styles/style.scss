@@ -1,0 +1,47 @@
+@import "../fonts/gilroy/gilroy.css";
+@import "normalize.css";
+@import "vars.scss";
+
+body {
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  font-family: 'Gilroy';
+  font-weight: $medium-font-weight;
+  color: #fff;
+}
+
+.background {
+  height: inherit;
+  background-size: cover;
+}
+
+.content {
+  position: relative;
+  z-index: -1;
+  height: 100%;
+  transition: $transition-default;
+}
+
+.opacity {
+  opacity: 0;
+}
+.settings-wrapper {
+  position: absolute;
+  width: 100%;
+  transform: translateX(100%);
+  height: 95%;
+}
+
+.main-wrapper {
+  height: 100%;
+}
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+}
