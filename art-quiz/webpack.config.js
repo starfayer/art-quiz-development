@@ -56,11 +56,17 @@ module.exports = (env, options) => {
             }
           ],
         }, {
-          test: /\.svg$/,
-          type: 'asset/inline'
-        },{
-          test: /\.(png|jpe?g|gif|ttf)$/,
-          type: 'asset/resource'
+          test: /\.(eot|ttf|woff|svg|woff2)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'static/[hash][ext][query]'
+          }
+        }, {
+          test: /\.(png|jpe?g|gif)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext][query]'
+          }
         }, {
           test: /\.html$/,
           use: {
