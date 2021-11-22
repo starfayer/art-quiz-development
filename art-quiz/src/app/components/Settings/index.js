@@ -36,8 +36,8 @@ class Settings extends Component {
       setTimeout(() => event.target.classList.remove('animated'), 2000);
     }
     // Have access to this.el because of inheritance
-    // document.querySelector('.settings-wrapper').style.transition = 'all 1s ease-in-out';
     document.querySelector('.settings-wrapper').classList.toggle('hidden');
+    document.querySelector('.settings-wrapper').nextElementSibling.classList.toggle('opacity');
   }
 
   changeVolume(event) { 

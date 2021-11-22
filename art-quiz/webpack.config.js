@@ -9,12 +9,12 @@ const { url } = require('inspector');
 const nothing = () => {};
 
 module.exports = (env, options) => {
-  const isProduction = options.mode === 'development';
+  const isProduction = options.mode === 'production';
   const isAnalyze = env.analyze;
 
   return {
     // mode: isProduction ? 'production' : 'development',
-    mode: 'development',
+    mode: 'production',
     // devtool: isProduction ? 'source-map' : 'eval',
     devtool: 'inline-source-map',
     entry: ['./src/index.js'],
