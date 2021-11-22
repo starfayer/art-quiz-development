@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open --hot",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d art-quiz",
     "production": "webpack --mode=development",
     "webpack": "webpack",
     "build": "webpack --mode=production",
