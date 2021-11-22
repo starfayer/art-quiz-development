@@ -20,8 +20,8 @@ module.exports = (env, options) => {
     entry: ['./src/index.js'],
     output: {
       filename: 'bundle.js',
-      path: path.join(__dirname, '/art-quiz'),
-      publicPath: path.join(__dirname, '/art-quiz'),
+      path: path.join(__dirname, '/build'),
+      publicPath: path.join(__dirname, '/build'),
     },
     resolve: {
       extensions: ['.js', '.json', '.mjs'],
