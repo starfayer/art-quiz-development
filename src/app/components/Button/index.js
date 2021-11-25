@@ -25,7 +25,6 @@ import htmlToElement from '@/utils/htmlToElement';
 //   scalable: true,
 //   template: ButtonElement
 // })
-
 const button = htmlToElement(ButtonElement);
 
 export default button;

@@ -3,12 +3,18 @@ import htmlToElement from "@/utils/htmlToElement";
 
 export default class Component {
   constructor(config) {
-    this.classSelector = config.classSelector;
+    this.scalable = config.scalable || null;
+    if (!this.scalable)  {
+      this.classSelector = config.classSelector;
+      this.el = document.querySelector(`.${this.classSelector}`) || null;
+    }
     this.template = config.template;
-    this.el = document.querySelector(`.${this.classSelector}`) || null;
   }
 
   render() {
+    if (this.scalable) {
+      
+    }
     if (!this.scalable) {
       if (!this.el)
         throw new Error(`Component with ${this.classSelector} wasn't found`);
